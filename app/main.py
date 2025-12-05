@@ -1,7 +1,19 @@
 """
 FastAPI - Config Drift Detector API
-Endpoints: /health, /drift, /report
+
+Este módulo implementa la API REST para detectar configuration drift
+entre manifests de Kubernetes y el estado real del cluster.
+
+Endpoints disponibles:
+    - GET /health: Health check del servicio
+    - GET /drift: Detecta drift en tiempo real
+    - GET /report: Reporte completo con estadísticas
+    - GET /: Información del servicio
+
+Author: Martin (Backend Team)
+Sprint 3 - Mejoras de documentación
 """
+
 from fastapi import FastAPI, HTTPException
 from datetime import datetime
 from app.scripts.collect_desired_state import get_desired_state
@@ -18,7 +30,20 @@ app = FastAPI(
 @app.get("/health")
 def health_check():
     """
-    Health check endpoint - verifica que el servicio está corriendo
+    Health check endpoint.
+    
+    Verifica que el servicio está corriendo correctamente.
+    
+    Returns:
+        dict: Estado del servicio con timestamp
+        
+    Example:
+        >>> GET /health
+        {
+            "status": "healthy",
+            "service": "config-drift-detector",
+            "timestamp": "2024-12-05T12:00:00Z"
+        }
     """
     return {
         "status": "healthy",

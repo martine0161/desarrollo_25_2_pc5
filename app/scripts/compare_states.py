@@ -1,12 +1,24 @@
 """
-Script para comparar estado deseado vs actual y generar reporte de drift
+Módulo de comparación de estados Kubernetes.
+
+Este módulo contiene la lógica para comparar el estado deseado
+(manifests del repositorio) con el estado actual (cluster real)
+y detectar configuration drift.
+
+Tipos de drift detectados:
+    - MISSING: Recurso en manifests pero no en cluster
+    - EXTRA: Recurso en cluster pero no en manifests
+    - DRIFT: Recurso existe en ambos pero con diferencias
+
+Sprint 3 - Mejoras de documentación
 """
+
 from typing import Dict, List, Any
 
 
 def compare_states(desired: Dict[str, List[Dict]], actual: Dict[str, List[Dict]]) -> List[Dict]:
     """
-    Compara estado deseado vs actual y detecta diferencias
+    Compara estado deseado vs actual y detecta diferencias.
     
     Args:
         desired: Estado deseado (manifests del repo)
@@ -14,6 +26,10 @@ def compare_states(desired: Dict[str, List[Dict]], actual: Dict[str, List[Dict]]
         
     Returns:
         Lista de diferencias detectadas
+        
+    Note:
+        Los tipos de recursos comparados incluyen:
+        Deployment, Service, ConfigMap, Secret, Ingress, NetworkPolicy
     """
     differences = []
     

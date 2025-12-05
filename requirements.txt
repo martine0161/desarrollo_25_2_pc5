@@ -1,7 +1,18 @@
+# Core API Framework
 fastapi==0.104.1
+
+# ASGI Server
 uvicorn[standard]==0.24.0
+
+# Kubernetes Client
 kubernetes==28.1.0
+
+# YAML Parser
 pyyaml==6.0.1
+
+# Testing Framework
 pytest==7.4.3
 pytest-cov==4.1.0
+
+# HTTP Client for testing
 httpx==0.25.1
