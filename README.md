@@ -362,7 +362,6 @@ pc5_desarrollo/
 ├── tests/
 │   ├── __init__.py
 │   └── test_drift_detector.py          # 12 tests
-├── CODEOWNERS                          # Code owners
 ├── KANBAN.md                           # Tablero Kanban
 ├── Dockerfile
 ├── docker-compose.yml
