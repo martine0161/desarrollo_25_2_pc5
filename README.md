@@ -244,7 +244,7 @@ cat .evidence/drift-report.json | jq
 
 - **Martin** - Backend
 - **Ariana** - Infraestructura
-- **Elmer** - QA
+- **Martin y Ariana** - QA
 
 ---
 
