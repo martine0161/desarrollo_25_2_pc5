@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 # 📚 Índice de Navegación - Proyecto 11
+=======
+# Índice de Navegación - Proyecto 11
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 🚀 EMPIEZA AQUÍ
+=======
+## EMPIEZA AQUÍ
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 1. **RESUMEN_PROYECTO.md** ← ¡LEE ESTO PRIMERO!
    - Resumen ejecutivo completo
@@ -26,7 +34,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 📖 Documentación Principal
+=======
+## Documentación Principal
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 ### README.md
 - **Qué es**: Documentación técnica completa del proyecto
@@ -42,7 +54,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 🔧 Código del Proyecto
+=======
+## Código del Proyecto
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 ### Backend (Python/FastAPI)
 
@@ -66,7 +82,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 🧪 Tests
+=======
+## Tests
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 **tests/test_drift_detector.py**
 - 15+ tests unitarios e integración
@@ -84,7 +104,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 🐳 Docker
+=======
+## Docker
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 **Dockerfile**
 - Imagen con Python + kubectl
@@ -98,7 +122,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## ☸️ Kubernetes Manifests
+=======
+## Kubernetes Manifests
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 **k8s/deployment.yaml**
 - Deployment de ejemplo (nginx-app)
@@ -114,7 +142,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 🔄 CI/CD (GitHub Actions)
+=======
+## CI/CD (GitHub Actions)
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 **.github/workflows/ci.yml**
 - Pipeline de CI (automático)
@@ -129,7 +161,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 🛠️ Utilidades
+=======
+## Utilidades
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 **Makefile**
 - Comandos automatizados
@@ -148,7 +184,11 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 📦 Configuración
+=======
+## Configuración
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 **requirements.txt**
 - Dependencias Python
@@ -160,12 +200,17 @@ Guía rápida para navegar todos los archivos del proyecto.
 
 ---
 
+<<<<<<< HEAD
 ## 📁 Directorio evidence/
+=======
+## Directorio evidence/
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 **evidence/.gitkeep**
 - Placeholder para Git
 - Aquí se guardan reportes JSON generados
 
+<<<<<<< HEAD
 ---
 
 ## 🗺️ Flujo de Lectura Recomendado
@@ -314,3 +359,6 @@ GET http://localhost:8000/report    ← Full report
 ---
 
 **Última actualización**: 2024-12-02
+=======
+---
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b

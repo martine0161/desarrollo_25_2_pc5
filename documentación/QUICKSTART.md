@@ -135,7 +135,10 @@ make test
 open htmlcov/index.html  # Mac
 xdg-open htmlcov/index.html  # Linux
 ```
+<<<<<<< HEAD
 
 ## Siguiente paso
 
 Lee el [README.md](README.md) completo para entender la arquitectura y detalles del proyecto.
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b

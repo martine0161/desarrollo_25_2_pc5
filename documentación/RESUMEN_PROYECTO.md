@@ -1,11 +1,19 @@
 # Proyecto 11 - Config Drift Detector
 ## Resumen Ejecutivo
 
+<<<<<<< HEAD
 ### ✅ Proyecto Completo y Listo para Usar
 
 ---
 
 ## 📦 Contenido Generado
+=======
+### Proyecto Completo y Listo para Usar
+
+---
+
+## Contenido Generado
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 ### Estructura del Proyecto
 ```
@@ -24,24 +32,43 @@ pc5_desarrollo/
 ├── Dockerfile               # Imagen con kubectl + Python
 ├── docker-compose.yml       # Stack completo
 ├── Makefile                 # Comandos automatizados
+<<<<<<< HEAD
 └── Documentación completa
+=======
+├── README.md                # Documentación principal
+└── documentación
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 ```
 
 ---
 
+<<<<<<< HEAD
 ## 🎯 Funcionalidades Implementadas
 
 ### ✅ API FastAPI
+=======
+## Funcionalidades Implementadas
+
+### API FastAPI
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 - **GET /health**: Health check
 - **GET /drift**: Detecta drift en tiempo real
 - **GET /report**: Reporte completo con estadísticas
 
+<<<<<<< HEAD
 ### ✅ Scripts Python
+=======
+### Scripts Python
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 1. **collect_desired_state.py**: Lee manifests YAML del repo
 2. **collect_actual_state.py**: Consulta cluster con kubectl
 3. **compare_states.py**: Compara y detecta diferencias
 
+<<<<<<< HEAD
 ### ✅ Detección de Drift
+=======
+### Detección de Drift
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 Detecta 3 tipos:
 - **MISSING** (Critical): Recurso en manifests pero no en cluster
 - **EXTRA** (Warning): Recurso en cluster pero no en manifests  
@@ -54,12 +81,20 @@ Compara:
 - Resources
 - Spec completo
 
+<<<<<<< HEAD
 ### ✅ Tests (pytest)
+=======
+### Tests (pytest)
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 - 15+ tests unitarios e integración
 - Coverage >70% requerido
 - Tests de API, comparación, detección de drift
 
+<<<<<<< HEAD
 ### ✅ Pipeline DevSecOps
+=======
+### Pipeline DevSecOps
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 **CI Pipeline (automático)**:
 - Lint con flake8
 - Tests con pytest
@@ -71,18 +106,27 @@ Compara:
 - Genera reporte JSON
 - Falla si hay drift crítico
 
+<<<<<<< HEAD
 ### ✅ Docker
+=======
+### Docker
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 - Dockerfile multi-stage con kubectl
 - docker-compose con volúmenes
 - Health checks configurados
 
+<<<<<<< HEAD
 ### ✅ Documentación
 - README.md completo (arquitectura, uso, troubleshooting)
+=======
+### Documentación
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 - QUICKSTART.md (setup en 5 minutos)
 - COMANDOS_GIT.md (guía para subir a GitHub)
 - Comentarios en código
 
 ---
+<<<<<<< HEAD
 
 ## 🚀 Cómo Usar
 
@@ -222,3 +266,5 @@ git push origin main
 **Estado**: ✅ PROYECTO COMPLETO Y FUNCIONAL
 
 **Última actualización**: 2024-12-02
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b

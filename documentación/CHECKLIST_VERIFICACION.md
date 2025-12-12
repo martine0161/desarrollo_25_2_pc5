@@ -1,5 +1,10 @@
 # Checklist de Verificación - Proyecto 11
 
+<<<<<<< HEAD
+=======
+Mostramos los requerimientos y contenido que debe tener el proyecto al finalizar, para esto se tiene mapeado los pasos que se contemplaron para el desarrollo y ejecución.
+
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 ## Pre-requisitos
 - [ ] Python 3.11+ instalado
 - [ ] pip actualizado
@@ -221,7 +226,11 @@ python check_drift.py
 tree -L 2 -I '__pycache__|*.pyc|htmlcov|.pytest_cache'
 ```
 
+<<<<<<< HEAD
 Verificar estructura:
+=======
+Verificar estructura principal:
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 ```
 .
 ├── .flake8
@@ -264,6 +273,7 @@ Verificar estructura:
 - [ ] Sin archivos .pyc
 - [ ] Sin .coverage o .pytest_cache
 
+<<<<<<< HEAD
 ---
 
 ## Checklist de Entrega
@@ -343,3 +353,6 @@ Si algo no funciona en el checklist:
 5. **GitHub Actions falla**:
    - Verificar secret KUBECONFIG configurado
    - Ver logs en Actions tab
+=======
+---
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b

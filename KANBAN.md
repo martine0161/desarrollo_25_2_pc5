@@ -1,5 +1,6 @@
 # Tablero Kanban - Proyecto 11: Config Drift Detector
 
+<<<<<<< HEAD
 ## 📊 Herramienta Utilizada
 
 **GitHub Projects** (recomendado) o Trello
@@ -9,6 +10,19 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
 ---
 
 ## 📋 Columnas del Tablero
+=======
+## Herramienta Utilizada
+
+**GitHub Projects** document Markdown
+
+Se creo este documento para llevar un registro detallado de las actividades para el proyecto.
+
+---
+
+## Detalle del Tablero
+
+Columnas
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 ```
 ┌─────────────┬─────────────┬─────────────┬─────────────┐
@@ -21,7 +35,11 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
 
 ---
 
+<<<<<<< HEAD
 ## 🎯 Sprint 1 (Días 1-2): Modelo de Estado + API Mínima
+=======
+## Sprint 1: Modelo de Estado + API Mínima
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 ### Backlog → Doing → Done
 
@@ -31,7 +49,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Crear modelo de datos para Deployment, Service, ConfigMap
   - [ ] Definir campos clave: name, namespace, replicas, labels
 - **Criterio de aceptación**: Tests unitarios para estructuras
+<<<<<<< HEAD
 - **PR**: `#1 - Define resource data structures`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 2: Implementar compare_states.py
 - **Descripción**: Lógica de comparación entre estados
@@ -40,7 +61,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Detectar recursos EXTRA
   - [ ] Detectar DRIFT (diferencias en replicas, labels)
 - **Criterio de aceptación**: Tests con estados mockeados
+<<<<<<< HEAD
 - **PR**: `#2 - Implement state comparison logic`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 3: API /drift con mocks
 - **Descripción**: Endpoint que use mocks de estados
@@ -49,7 +73,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] /drift retorna drift_count y differences[]
   - [ ] Tests de endpoints
 - **Criterio de aceptación**: curl /drift funciona con datos ficticios
+<<<<<<< HEAD
 - **PR**: `#3 - Add /drift endpoint with mocks`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 4: CI pipeline
 - **Descripción**: GitHub Actions para lint y tests
@@ -59,6 +86,7 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Tests con pytest
   - [ ] Coverage check >70%
 - **Criterio de aceptación**: Pipeline pasa en PR
+<<<<<<< HEAD
 - **PR**: `#4 - Add CI pipeline`
 
 **Evidencias Sprint 1**:
@@ -68,6 +96,16 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
 ---
 
 ## 🎯 Sprint 2 (Días 3-4): Integración con Manifests + Docker
+=======
+
+**Evidencias Sprint 1**:
+- `.evidence/ci-report.txt`
+- Tests pasando (12/12)
+
+---
+
+## Sprint 2: Integración con Manifests + Docker
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 ### Backlog → Doing → Done
 
@@ -78,7 +116,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Leer Deployment, Service, ConfigMap
   - [ ] Retornar dict con recursos agrupados
 - **Criterio de aceptación**: Lee k8s/ correctamente
+<<<<<<< HEAD
 - **PR**: `#5 - Implement desired state collector`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 6: Dockerfile y docker-compose
 - **Descripción**: Contenerizar el servicio
@@ -88,7 +129,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] HEALTHCHECK configurado
   - [ ] docker-compose.yml con volúmenes
 - **Criterio de aceptación**: `docker-compose up` funciona
+<<<<<<< HEAD
 - **PR**: `#6 - Add Docker configuration`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 7: drift_check.yml workflow
 - **Descripción**: Pipeline que ejecuta comparación
@@ -97,7 +141,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Job compare: ejecuta compare_states.py
   - [ ] Genera .evidence/drift-report.json
 - **Criterio de aceptación**: Workflow ejecuta correctamente
+<<<<<<< HEAD
 - **PR**: `#7 - Add drift check workflow`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 8: Endpoint /report
 - **Descripción**: Reporte completo con estadísticas
@@ -106,6 +153,7 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Agrupa por severidad (CRITICAL, HIGH, WARNING)
   - [ ] JSON con summary y details
 - **Criterio de aceptación**: /report retorna estadísticas
+<<<<<<< HEAD
 - **PR**: `#8 - Add /report endpoint`
 
 **Evidencias Sprint 2**:
@@ -115,6 +163,16 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
 ---
 
 ## 🎯 Sprint 3 (Días 5-6): Minikube + Política de Bloqueo
+=======
+
+**Evidencias Sprint 2**:
+- `.evidence/drift-report.json` (primera versión)
+- `.evidence/build-log.txt`
+
+---
+
+## Sprint 3: Minikube + Política de Bloqueo
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 ### Backlog → Doing → Done
 
@@ -125,7 +183,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Parsear output JSON
   - [ ] Manejar errores de conexión
 - **Criterio de aceptación**: Lee estado real de Minikube
+<<<<<<< HEAD
 - **PR**: `#9 - Implement actual state collector`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 10: Self-hosted runner
 - **Descripción**: Configurar runner con acceso a cluster
@@ -134,7 +195,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Instalar Docker y kubectl
   - [ ] Actualizar drift_check.yml con runs-on: self-hosted
 - **Criterio de aceptación**: Pipeline se ejecuta en self-hosted
+<<<<<<< HEAD
 - **PR**: `#10 - Configure self-hosted runner`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 11: Reglas de drift crítico
 - **Descripción**: Políticas para bloquear deploy
@@ -144,7 +208,10 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Detectar falta de NetworkPolicy -> HIGH
   - [ ] Pipeline falla si hay drift crítico
 - **Criterio de aceptación**: Pipeline falla con drift crítico
+<<<<<<< HEAD
 - **PR**: `#11 - Add critical drift policies`
+=======
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
 
 #### Historia 12: Build, Scan & SBOM workflow
 - **Descripción**: Pipeline de seguridad
@@ -154,6 +221,7 @@ URL del tablero: `https://github.com/users/USUARIO/projects/N` (reemplazar con t
   - [ ] Generar SBOM con Syft
   - [ ] Guardar reportes en .evidence/
 - **Criterio de aceptación**: Genera trivy-report.json y sbom.json
+<<<<<<< HEAD
 - **PR**: `#12 - Add security scanning pipeline`
 
 **Evidencias Sprint 3**:
@@ -218,3 +286,12 @@ Cada video de sprint debe mostrar:
 ---
 
 **Última actualización**: Sprint 3 (Día 6)
+=======
+
+**Evidencias Sprint 3**:
+- `.evidence/trivy-report.json`
+- `.evidence/sbom.json`
+- `.evidence/drift-report.json`
+
+---
+>>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
