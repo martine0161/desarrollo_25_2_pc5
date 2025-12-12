@@ -2,25 +2,25 @@
 # Este archivo define quién debe revisar PRs en diferentes partes del código
 
 # Configuración global - requiere aprobación del equipo DevOps
-* @USUARIO_GITHUB
+* @martine0161
 
 # Código Python - backend team
-*.py @USUARIO_GITHUB
-app/ @USUARIO_GITHUB
-tests/ @USUARIO_GITHUB
+*.py @martine0161
+app/ @martine0161
+tests/ @martine0161
 
 # Workflows de CI/CD - DevOps/SRE team
-.github/workflows/ @USUARIO_GITHUB
+.github/workflows/ @martine0161
 
 # Manifests de Kubernetes - Platform team
-k8s/ @USUARIO_GITHUB
+k8s/ @martine0161
 
 # Documentación - cualquiera puede revisar
-*.md @USUARIO_GITHUB
+*.md @martine0161
 
 # Docker configuration
-Dockerfile @USUARIO_GITHUB
-docker-compose.yml @USUARIO_GITHUB
+Dockerfile @martine0161
+docker-compose.yml @martine0161
 
 # Evidencias DevSecOps - no requiere revisión obligatoria
 .evidence/

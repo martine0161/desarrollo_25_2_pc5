@@ -17,9 +17,11 @@ spec:
         app: nginx
         env: production
     spec:
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
+      # securityContext comentado para permitir que nginx corra correctamente
+      # nginx necesita permisos de root o una imagen especial (nginx-unprivileged)
+      # securityContext:
+      #   runAsNonRoot: true
+      #   runAsUser: 1000
       containers:
       - name: nginx
         image: nginx:1.21
