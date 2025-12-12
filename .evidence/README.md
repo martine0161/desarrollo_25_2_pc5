@@ -1,52 +1,19 @@
-# Carpeta .evidence/
+# 📂 Carpeta .evidence/
 
-Esta carpeta contiene las evidencias DevSecOps generadas por los pipelines de GitHub Actions.
+Esta carpeta almacena las **evidencias DevSecOps** generadas automáticamente por los pipelines de GitHub Actions.
 
-## Archivos Generados
+> ⚠️ **IMPORTANTE:** Esta carpeta **se versiona en Git** (no está en `.gitignore`) para mantener un historial de auditoría de cada Sprint.
 
-### CI Pipeline (ci.yml)
-- `ci-report.txt`: Output completo de tests y cobertura
-- `coverage.json`: Reporte de cobertura en formato JSON
+## 📄 Archivos Generados
 
-<<<<<<< HEAD
-### Build, Scan & SBOM Pipeline (build_scan_sbom.yml)
-=======
-### Build, Scan y SBOM Pipeline (build_scan_sbom.yml)
->>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
-- `build-log.txt`: Log de construcción de la imagen Docker
-- `trivy-report.json`: Reporte de vulnerabilidades en formato JSON
-- `trivy-report.txt`: Reporte de vulnerabilidades en formato texto
-- `sbom.json`: Software Bill of Materials en formato JSON
-<<<<<<< HEAD
-- `sbom.txt`: SBOM en formato tabla legible
-=======
-- `sbom.txt`: SBOM en formato texto con salida como tabla, para mayor legibilidad
->>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
+| Pipeline | Archivos | Descripción |
+| :--- | :--- | :--- |
+| **🧪 CI** | `ci-report.txt`<br>`coverage.json` | Resultados de tests y porcentaje de cobertura. |
+| **🛡️ Build & Scan** | `build-log.txt`<br>`trivy-report.*`<br>`sbom.*` | Logs de Docker, reportes de vulnerabilidades y lista de materiales de software (SBOM). |
+| **⚙️ Drift** | `drift-report.json` | Reporte de desviaciones de configuración (drift). |
 
-### Drift Check Pipeline (drift_check.yml)
-- `drift-report.json`: Reporte de configuration drift detectado
+## 📅 Progreso por Sprint
 
-## Versionado
-
-<<<<<<< HEAD
-⚠️ **IMPORTANTE**: Esta carpeta está versionada en Git (NO está en .gitignore).
-
-Cada sprint debe agregar al menos una evidencia nueva aquí.
-
-## Sprints
-
-### Sprint 1 (Días 1-2)
-- ✅ ci-report.txt (primera versión)
-- ✅ coverage.json
-
-### Sprint 2 (Días 3-4)
-- ✅ build-log.txt
-- ✅ drift-report.json (primera versión con datos simulados)
-
-### Sprint 3 (Días 5-6)
-- ✅ trivy-report.json
-- ✅ sbom.json
-- ✅ drift-report.json (versión con cluster real)
-=======
-**IMPORTANTE**: Esta carpeta está versionada en Git (NO está en .gitignore).
->>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
+* **Sprint 1:** ✅ Tests y Cobertura (`ci-report`, `coverage`).
+* **Sprint 2:** ✅ Build Docker y Drift simulado (`build-log`, `drift-report`).
+* **Sprint 3:** ✅ Seguridad y Drift real (`trivy`, `sbom`, `drift-report` actualizado).

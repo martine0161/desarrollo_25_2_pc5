@@ -1,60 +1,175 @@
-# Guía de Inicio Rápido
+# Quick Start - PC5 Config Drift Detector
 
-## Setup en 5 minutos
+**Setup en 5 minutos** | 11-12-2025
 
-### 1. Instalar dependencias
+---
+
+## 🚀 Instalación Rápida
+
+### 1. Clonar e Instalar
+
 ```bash
-pip install -r requirements.txt
+# Clonar repositorio
+git clone https://github.com/usuario/pc5_desarrollo.git
+cd pc5_desarrollo
+
+# Crear entorno virtual
+python -m venv venv
+
+# Activar (Git Bash Windows)
+source venv/Scripts/activate
+
+# Activar (PowerShell)
+# .\venv\Scripts\Activate.ps1
+
+# Instalar dependencias
+python -m pip install -r requirements.txt
 ```
 
-### 2. Verificar acceso al cluster
+---
+
+## 🔧 Setup Kubernetes
+
+### Opción A: kind (Recomendado)
+
 ```bash
+# Crear cluster
+kind create cluster --name drift-detector
+
+# Verificar
 kubectl cluster-info
 kubectl get nodes
+
+# Aplicar manifests
+kubectl apply -f k8s/
+
+# Verificar recursos
+kubectl get all
 ```
 
-### 3. Ejecutar tests
+### Opción B: Minikube
+
 ```bash
-make test
-# o
-pytest tests/ -v
+# Iniciar cluster
+minikube start
+
+# Aplicar manifests
+kubectl apply -f k8s/
+
+# Verificar
+kubectl get all
 ```
 
-### 4. Ejecutar API localmente
+---
+
+## 🎯 Ejecutar API
+
 ```bash
-make run
-# o
-uvicorn app.main:app --reload
+# Iniciar servidor
+python -m uvicorn app.main:app --reload
+
+# Debería mostrar:
+# INFO: Uvicorn running on http://127.0.0.1:8000
 ```
 
-### 5. Probar endpoints
+---
 
-**Health check:**
+## 🧪 Probar Endpoints
+
+### Health Check
 ```bash
 curl http://localhost:8000/health
 ```
 
-**Drift check:**
+**Respuesta esperada:**
+```json
+{
+  "status": "healthy",
+  "service": "config-drift-detector",
+  "timestamp": "2025-12-11T..."
+}
+```
+
+### Drift Check
 ```bash
 curl http://localhost:8000/drift
 ```
 
-**Reporte completo:**
+### Reporte Completo
 ```bash
 curl http://localhost:8000/report
 ```
 
-## Ejecución manual de drift check
+---
+
+## 🔍 Demo: Detectar Drift
+
+### 1. Estado Inicial (Sin Drift)
 
 ```bash
-python check_drift.py
+# Ver replicas actuales
+kubectl get deployments
+
+# nginx-app   3/3     3            3           1m
+
+# Verificar sin drift
+curl http://localhost:8000/drift | jq '.has_drift'
+# false
 ```
 
-## Con Docker
+### 2. Crear Drift Intencional
+
+```bash
+# Modificar replicas en cluster
+kubectl scale deployment nginx-app --replicas=2
+
+# Verificar cambio
+kubectl get deployments
+# nginx-app   2/2     2            2           2m
+```
+
+### 3. Detectar Drift
+
+```bash
+# Ejecutar drift check
+curl http://localhost:8000/drift | jq
+
+# Resultado esperado:
+# "has_drift": true
+# "drift_count": 1
+# "differences": [
+#   {
+#     "type": "DRIFT",
+#     "drifts": [{
+#       "field": "replicas",
+#       "desired": 3,
+#       "actual": 2
+#     }]
+#   }
+# ]
+```
+
+---
+
+## 🧪 Ejecutar Tests
+
+```bash
+# Tests completos
+pytest tests/ -v
+
+# Con coverage
+pytest tests/ --cov=app --cov-report=term
+
+# Esperado: 12/12 tests PASSED
+```
+
+---
+
+## 🐳 Docker (Opcional)
 
 ```bash
 # Build y run
-make docker-up
+docker-compose up --build -d
 
 # Verificar
 curl http://localhost:8000/health
@@ -63,82 +178,107 @@ curl http://localhost:8000/health
 docker-compose logs -f
 
 # Detener
-make docker-down
+docker-compose down
 ```
 
-## Crear drift intencional (para testing)
+---
+
+## 🐛 Troubleshooting
+
+### Problema: Pods en CrashLoopBackOff
+
+**Solución:** Editar `k8s/deployment.yaml`
+
+```yaml
+# Comentar estas líneas:
+# securityContext:
+#   runAsNonRoot: true
+#   runAsUser: 1000
+```
+
+Aplicar cambio:
+```bash
+kubectl apply -f k8s/deployment.yaml
+```
+
+### Problema: kubectl not found
 
 ```bash
-# 1. Aplicar manifests al cluster
-kubectl apply -f k8s/
+# Windows (Chocolatey)
+choco install kubernetes-cli
 
-# 2. Modificar algo en el cluster
-kubectl scale deployment nginx-app --replicas=2
-
-# 3. Ejecutar drift check
-curl http://localhost:8000/drift
-# Debería detectar: desired=3, actual=2
+# Verificar
+kubectl version --client
 ```
 
-## Pipeline de GitHub Actions
+### Problema: API no detecta drift
 
-### CI (automático en push/PR)
 ```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-# El pipeline se ejecuta automáticamente
+# Verificar cluster
+kubectl cluster-info
+
+# Verificar recursos
+kubectl get all
+
+# Ver logs API
+docker-compose logs -f
 ```
 
-### Drift Check (manual)
-1. Ir a GitHub → Actions
-2. Seleccionar "Drift Check Pipeline"
-3. Click en "Run workflow"
+### Problema: Import errors en Python
 
-## Troubleshooting rápido
-
-**Error: kubectl not found**
-```bash
-# Instalar kubectl (Linux)
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-chmod +x kubectl
-sudo mv kubectl /usr/local/bin/
-```
-
-**Error: cannot connect to cluster**
-```bash
-# Verificar kubeconfig
-export KUBECONFIG=~/.kube/config
-kubectl config view
-```
-
-**Tests fallan**
 ```bash
 # Reinstalar dependencias
-pip install -r requirements.txt --force-reinstall
+python -m pip install -r requirements.txt --force-reinstall
+
+# Ejecutar con python -m
+python -m uvicorn app.main:app --reload
 ```
 
-## Comandos útiles
+---
+
+## 📝 Comandos Útiles
 
 ```bash
-# Ver todos los comandos disponibles
-make help
+# Ver estado cluster
+kubectl get all
 
-# Limpiar archivos temporales
-make clean
+# Ver logs de pod
+kubectl logs <pod-name>
 
-# Ejecutar solo lint
-make lint
+# Describir recurso
+kubectl describe deployment nginx-app
 
-# Ver cobertura de tests
-make test
-open htmlcov/index.html  # Mac
-xdg-open htmlcov/index.html  # Linux
+# Ver evidencias generadas
+cat .evidence/drift-report.json | jq
+
+# Ejecutar drift check manual
+python check_drift.py
+
+# Limpiar cluster
+kind delete cluster --name drift-detector
 ```
-<<<<<<< HEAD
 
-## Siguiente paso
+---
 
-Lee el [README.md](README.md) completo para entender la arquitectura y detalles del proyecto.
-=======
->>>>>>> de88fd9f0f4c4071238e1155dfc3f4ce7a85d54b
+## 🎬 Flujo Completo
+
+```bash
+# 1. Setup
+kind create cluster --name drift-detector
+kubectl apply -f k8s/
+
+# 2. Iniciar API (terminal 1)
+python -m uvicorn app.main:app --reload
+
+# 3. Probar sin drift (terminal 2)
+curl http://localhost:8000/drift
+
+# 4. Crear drift
+kubectl scale deployment nginx-app --replicas=2
+
+# 5. Detectar drift
+curl http://localhost:8000/drift
+
+# 6. Ver reporte
+cat .evidence/drift-report.json | jq
+```

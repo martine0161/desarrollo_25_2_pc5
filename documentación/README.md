@@ -295,14 +295,10 @@ pytest tests/ --cov=app --cov-report=term
 
 ## 👥 Equipo
 
-- **Backend/DevOps**: [Tu nombre]
-- **Frontend/Infra**: [Compañero 1]
-- **QA/Docs**: [Compañero 2]
+- **Backend/DevOps**: [Martin Centeno Leon]
+- **Frontend/Infra**: [Ariana Mercado Taype]
+- **QA/Docs**: [Martin Centeno Leon y Ariana Mercado Taype]
 
 ## 📄 Licencia
 
 Proyecto académico - CC3S2 2025-II
-
----
-
-**Última actualización**: 2024-12-02
